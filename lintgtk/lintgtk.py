@@ -10,15 +10,19 @@ import gtk
 import gtksourceview2 as gtksourceview
 from kiwi.ui.delegates import GladeDelegate
 from kiwi.ui.objectlist import ObjectList, Column
+
+
+from kiwi.environ import environ
 import kiwi.ui.proxywidget # XXX needed for pixbuf
 
 from twisted.internet import gtk2reactor
+
 gtk2reactor.install()
+
 from twisted.internet import threads, reactor
 
-from metamodel import Property
 from metamodel import SubscribableModel as Model
-from metamodel.datasources.filesource import FileDataSource
+from metamodel.properties import Property
 
 from pylint import lint, checkers
 from pylint.reporters import BaseReporter
@@ -135,9 +139,12 @@ class PylintView(GladeDelegate, BaseReporter):
         self.editor.set_highlight_current_line(True)        
         self.editor.set_indent_width(4)
         self.editor.set_indent_on_tab(True)
-        high = gtk.gdk.pixbuf_new_from_file("images/red-warning.png")
-        medium = gtk.gdk.pixbuf_new_from_file("images/violet-warning.png")
-        low = gtk.gdk.pixbuf_new_from_file("images/yellow-warning.png")
+        path = environ.find_resource('images', 'red-warning.png')
+        high = gtk.gdk.pixbuf_new_from_file(path)
+        path = environ.find_resource('images', 'violet-warning.png')
+        medium = gtk.gdk.pixbuf_new_from_file(path)
+        path = environ.find_resource('images', 'yellow-warning.png')
+        low = gtk.gdk.pixbuf_new_from_file(path)
         self.icons["low"] = low
         self.icons["warning"] = medium
         self.icons["error"] = high

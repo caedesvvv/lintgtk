@@ -1,0 +1,21 @@
+Graphical lint checker 0.5
+
+Dependencies:
+-------------------
+  * python-twisted-core
+  * python-kiwi
+  * python-metamodel
+
+Install
+-------
+From the source distribution, extract the tarball and run ::
+
+    python setup.py install
+
+You'll have to install dependancies in a similar way. For debian and
+rpm packages, use your usual tools according to your Linux distribution.
+
+More information about installation and available distribution format
+may be found in the user manual in the *doc* subdirectory.
+
+

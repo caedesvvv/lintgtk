@@ -1,0 +1,18 @@
+#!/usr/bin/env python
+"""
+A pylint checker made with with gtk
+"""
+import os, sys
+
+if os.path.exists("/usr/share/lintgtk"):
+    sys.path.append("/usr/share/lintgtk")
+
+from lintgtk.lintgtk import PylintView
+from twisted.internet import reactor
+
+if __name__ == "__main__":
+    app = PylintView()
+    app.show()
+    app.load_file(sys.argv[1])
+    reactor.run()
+
