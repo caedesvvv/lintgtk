@@ -1,2 +1,2 @@
 version=3
-opts=pasv ftp://ftp.logilab.org/pub/pylint/pylint-(.*)\.tar\.gz
+opts=pasv http://delcorp.org/code/lintgtk/lintgtk-(.*)\.tar\.gz

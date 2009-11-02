@@ -10,7 +10,7 @@ Homepage: http://delcorp.org/code/linttgk
 
 Package: lintgtk
 Architecture: all
-Depends: ${python:Depends}, ${misc:Depends}, python-twisted-core, pylint, python-kiwi, python-gtksourceview2
+Depends: ${python:Depends}, ${misc:Depends}, python-twisted-core, pylint, python-kiwi, python-gtksourceview2, python-metamodel
 XB-Python-Version: all
 Description: graphical interface for pylint
  Pylint is a Python source code analyzer which looks for programming
